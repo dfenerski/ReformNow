@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";return{dateFormatter1:function t(e){var r=new Date(e),a=r.getDate(),n=r.getMonth()+1;return""+(a<10?"0"+a:a)+"."+(n<10?"0"+n:n)+"."+r.getFullYear()},extractJSONDate:function t(e){var r=new Date(e);var a=r.getMonth()+1;var n=r.getDate();return""+(n<10?"0"+n:n)+"."+(a<10?"0"+a:a)+"."+r.getFullYear()}}});

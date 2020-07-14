@@ -1,0 +1,61 @@
+<mvc:View controllerName="com.ReformNow.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+    <Page>
+        <customHeader>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Title text="ЦЕЛИ НА ПРОТЕСТИТЕ" />
+                <ToolbarSpacer />
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+            <List id="demandList" items="{local>/demands}">
+                <items>
+                    <CustomListItem>
+                        <Panel accessibleRole="Form" backgroundDesign="Translucent" expandable="true">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <!-- <Title text="{= ${local>title}.toUpperCase() }" /> -->
+                                    <Title text="{local>title}" />
+                                    <ToolbarSpacer />
+                                    <Title text="{local>rating} гласа">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                        </layoutData>
+                                    </Title>
+                                    <Button type="Success" icon="sap-icon://arrow-top" press="onHandleVote($event, 'up')" visible="{= !${local>voters}.includes(${firebase>/auth/currentUser/uid}) }" tooltip="гласувай 'ЗА'">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                        </layoutData>
+                                    </Button>
+                                    <Button type="Negative" icon="sap-icon://arrow-bottom" press="onHandleVote($event, 'down')" visible="{= !${local>voters}.includes(${firebase>/auth/currentUser/uid}) }" tooltip="гласувай 'ПРОТИВ'">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData priority="NeverOverflow" />
+                                        </layoutData>
+                                    </Button>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <content>
+                                <form:SimpleForm layout="ColumnLayout" editable="true" title="{local>shortText}">
+                                    <Label text="Цел" />
+                                    <Text text="{local>title}" />
+                                    <Label text="Обосновка" />
+                                    <Text text="{local>description}" />
+                                    <Label text="Гласове" />
+                                    <Text text="{local>rating}" />
+                                    <Label text="Създадена на" />
+                                    <Text text="{path: 'local>timestamp', formatter: '.formatter.extractJSONDate'}" />
+                                </form:SimpleForm>
+                            </content>
+                        </Panel>
+                    </CustomListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button text="Добави" type="Emphasized" press="handleOpenAddDialog" tooltip="Ако нещо липсва, добави го!" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

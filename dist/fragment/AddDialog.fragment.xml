@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+    <Dialog title="Добави цел, за която протестираш" resizable="true" draggable="true">
+        <content>
+            <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+                <form:content>
+                    <Label text="Заглавие" />
+                    <Input id="titleField" />
+                    <Label text="Обосновка" />
+                    <Input id="descrField" />
+                    <Label text="Дата" />
+                    <DatePicker id="dateField" displayFormat="dd.MM.YYYY" enabled="false" />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button text="Добави" type="Emphasized" press="handleAddGoal" />
+        </beginButton>
+        <endButton>
+            <Button text="Назад" press="handleCloseDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

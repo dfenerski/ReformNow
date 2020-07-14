@@ -1,0 +1,9 @@
+<mvc:View controllerName="com.ReformNow.controller.Root" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell" class="shellBackground">
+		<App id="app">
+			<pages>
+				<!-- added by router -->
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

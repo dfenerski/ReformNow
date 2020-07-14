@@ -1,0 +1,1 @@
+sap.ui.define(["com/ReformNow/controller/Root.controller"],function(o){"use strict";QUnit.module("Root Controller");QUnit.test("I should test the Root controller",function(t){var n=new o;n.onInit();t.ok(n)})});

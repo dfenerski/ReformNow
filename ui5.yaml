@@ -1,0 +1,17 @@
+specVersion: '2.1'
+metadata:
+  name: reformnow
+type: application
+builder:
+  customTasks:
+    - name: babel
+      afterTask: replaceVersion
+---
+specVersion: "1.0"
+kind: extension
+type: task
+metadata:
+  name: babel
+task:
+  path: tasks/babel.js
+

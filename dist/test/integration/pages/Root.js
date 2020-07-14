@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/test/Opa5"],function(e){"use strict";var t="Root";e.createPageObjects({onTheAppPage:{actions:{},assertions:{iShouldSeeTheApp:function i(){return this.waitFor({id:"app",viewName:t,success:function t(){e.assert.ok(true,"The Root view is displayed")},errorMessage:"Did not find the Root view"})}}}})});
